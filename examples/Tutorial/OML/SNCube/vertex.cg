@@ -1,0 +1,19 @@
+struct Input
+{
+	float4 position : POSITION;
+	float2 tex0 : TEXCOORD0;
+};
+
+struct Output
+{
+	float4 position : POSITION;
+	float2 tex0 : TEXCOORD0;
+};
+
+Output main(Input input, const uniform float4x4 mvp)
+{
+	Output output;
+	output.position = mul(mvp, input.position);
+	output.tex0 = input.tex0;
+	return output;
+}

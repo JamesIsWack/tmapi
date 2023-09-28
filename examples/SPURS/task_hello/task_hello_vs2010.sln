@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task_hello", "task_hello.vcxproj", "{C3899869-E475-42D5-8205-BFE05077FAEE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spurs_task_hello", "spurs_task_hello\spurs_task_hello.vcxproj", "{B64816F5-BCA6-4CC5-A668-A24C402D3D36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|PS3 = Debug|PS3
+		Release|PS3 = Release|PS3
+		SNC Debug|PS3 = SNC Debug|PS3
+		SNC Release|PS3 = SNC Release|PS3
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3899869-E475-42D5-8205-BFE05077FAEE}.Debug|PS3.ActiveCfg = Debug|PS3
+		{C3899869-E475-42D5-8205-BFE05077FAEE}.Debug|PS3.Build.0 = Debug|PS3
+		{C3899869-E475-42D5-8205-BFE05077FAEE}.Release|PS3.ActiveCfg = Release|PS3
+		{C3899869-E475-42D5-8205-BFE05077FAEE}.Release|PS3.Build.0 = Release|PS3
+		{C3899869-E475-42D5-8205-BFE05077FAEE}.SNC Debug|PS3.ActiveCfg = SNC Debug|PS3
+		{C3899869-E475-42D5-8205-BFE05077FAEE}.SNC Debug|PS3.Build.0 = SNC Debug|PS3
+		{C3899869-E475-42D5-8205-BFE05077FAEE}.SNC Release|PS3.ActiveCfg = SNC Release|PS3
+		{C3899869-E475-42D5-8205-BFE05077FAEE}.SNC Release|PS3.Build.0 = SNC Release|PS3
+		{B64816F5-BCA6-4CC5-A668-A24C402D3D36}.Debug|PS3.ActiveCfg = Debug|PS3
+		{B64816F5-BCA6-4CC5-A668-A24C402D3D36}.Debug|PS3.Build.0 = Debug|PS3
+		{B64816F5-BCA6-4CC5-A668-A24C402D3D36}.Release|PS3.ActiveCfg = Release|PS3
+		{B64816F5-BCA6-4CC5-A668-A24C402D3D36}.Release|PS3.Build.0 = Release|PS3
+		{B64816F5-BCA6-4CC5-A668-A24C402D3D36}.SNC Debug|PS3.ActiveCfg = Debug|PS3
+		{B64816F5-BCA6-4CC5-A668-A24C402D3D36}.SNC Debug|PS3.Build.0 = Debug|PS3
+		{B64816F5-BCA6-4CC5-A668-A24C402D3D36}.SNC Release|PS3.ActiveCfg = Release|PS3
+		{B64816F5-BCA6-4CC5-A668-A24C402D3D36}.SNC Release|PS3.Build.0 = Release|PS3
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

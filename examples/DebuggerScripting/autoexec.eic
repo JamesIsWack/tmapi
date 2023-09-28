@@ -1,0 +1,98 @@
+//****************************************************************************
+//
+// Copyright(c) 2011, Sony Computer Entertainment Inc. / SN Systems Limited
+//
+//   Description: autoexec.eic is an example of a startup script.  This script
+//   loads into the Immediate Mode Script Engine and remains resident.  It adds
+//   a menu item which will callback to "TestFunction".  When called, this function
+//   uses GetObjectData to attempt to find the address at the cursor (command
+//   will only succeed when called from Memory Pane, Source Pane or Disassembly
+//   Pane.  The BusyFunction can be called from the Immediate Mode pane by
+//   entering the function call and executing it.  In order to stop the execution,
+//   press "Ctrl-C"
+//
+//****************************************************************************
+
+
+
+void BusyFunction()
+{
+	while (1) 
+	{
+		sn_uint32 i;
+		
+		for (i = 0 ; i < 25 ; ++i)
+			printf("a");
+			
+		printf("\n");
+	}
+		
+}
+
+void VectorHandler( sn_uint32 uProcess, sn_uint32 uThread0, sn_uint32 uThread1, char *pVar, char *pOutput, sn_uint32 uSize)
+{
+	int iRes;
+	char sExpand[ 256 ];
+	sn_val X, Y, Z, W;
+
+	sn_uint64 u64ThreadID;
+	u64ThreadID.word[0] = uThread0;
+	u64ThreadID.word[1] = uThread1;
+	sprintf( sExpand, "( ( float* )&( %s ) )[ 0 ]", pVar );
+	
+	iRes = PS3EvaluateExpression( uProcess, u64ThreadID, &X, sExpand );
+	if( !SN_FAILED( iRes ) )
+	{
+		sprintf( sExpand, "( ( float* )&( %s ) )[ 1 ]", pVar );
+		iRes = PS3EvaluateExpression( uProcess, u64ThreadID, &Y, sExpand );
+		if( !SN_FAILED( iRes ) )
+		{
+			sprintf( sExpand, "( ( float* )&( %s ) )[ 2 ]", pVar );
+			iRes = PS3EvaluateExpression( uProcess, u64ThreadID , &Z, sExpand );
+			if( !SN_FAILED( iRes ) )
+			{
+				sprintf( sExpand, "( ( float* )&( %s ) )[ 3 ]", pVar );
+				iRes = PS3EvaluateExpression( uProcess, u64ThreadID , &W, sExpand );
+			}
+		}
+	}
+	
+	if( SN_FAILED( iRes ) )
+	{
+		strcpy( pOutput, GetLastErrorString( ) );
+	}
+	else
+	{
+		sprintf( pOutput, "%g, %g, %g, %g", *( ( float* )&X.val ), *( ( float* )&Y.val ), *( ( float* )&Z.val ), *( ( float* )&W.val ) );
+	}
+}
+
+void TestFunction(sn_uint32 uMenuID, sn_uint32 uCallingID, sn_uint32 uObjectID)
+{
+	sn_uint32 uSize1 = 8;
+    sn_uint32 uSize2 = 4;
+    sn_uint64 uThreadID;
+    sn_uint32 uProcessID;
+
+	if (SN_SUCCEEDED(GetObjectData(uCallingID, GVD_PROCESS, &uProcessID, uSize2)))	
+		printf("\nProcess ID is 0x%04x", uProcessID) ;
+	else
+	    printf("Command not supported by view\n");
+	    
+	if (SN_SUCCEEDED(GetObjectData(uCallingID, GVD_THREAD, &uThreadID, uSize1)))	
+		printf("\nThread ID is 0x%X", uThreadID.word[0]) ;
+	else
+	    printf("Command not supported by view\n");
+}
+
+
+int main (int argc, char ** argv)
+{
+	sn_uint32 uID;
+	
+	//  Discards uID, as the function called is defining enough
+	CommandAddMenuItem("IM Test", &uID, "All", "TestFunction");
+	
+	RegisterTypeDisplayHandler("Vector3 :[1]VectorHandler");
+	return 0;
+}

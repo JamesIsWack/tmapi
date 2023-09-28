@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PS3">
+      <Configuration>Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PS3">
+      <Configuration>Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="SNC Debug|PS3">
+      <Configuration>SNC Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="SNC Release|PS3">
+      <Configuration>SNC Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5DB42857-8DA8-4651-9D0E-668EE3CBCBBA}</ProjectGuid>
+    <RootNamespace>CustomDeci3.self.vs9</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+    <ExceptionsAndRtti>NoExceptsWithRtti</ExceptionsAndRtti>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+    <ExceptionsAndRtti>NoExceptsWithRtti</ExceptionsAndRtti>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>GCC</PlatformToolset>
+    <ExceptionsAndRtti>NoExceptsNoRtti</ExceptionsAndRtti>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>GCC</PlatformToolset>
+    <ExceptionsAndRtti>NoExceptsNoRtti</ExceptionsAndRtti>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">Debug\</IntDir>
+    <ExtensionsToDeleteOnClean Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath);$(TargetDir)$(TargetName).self;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'" />
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">Release\</IntDir>
+    <ExtensionsToDeleteOnClean Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath);$(TargetDir)$(TargetName).self;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|PS3'" />
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'">SNC_Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'">SNC_Debug\</IntDir>
+    <ExtensionsToDeleteOnClean Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'">*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath);$(TargetDir)$(TargetName).self;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'" />
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'">SNC_Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'">SNC_Release\</IntDir>
+    <ExtensionsToDeleteOnClean Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'">*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath);$(TargetDir)$(TargetName).self;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'" />
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'">false</GenerateManifest>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">CustomDeci3.self.ppu</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">$(ProjectName).ppu</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'">$(ProjectName).ppu</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'">$(ProjectName).ppu</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">.elf</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">.elf</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'">.self</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'">.self</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;_DEBUG;__GCC__</PreprocessorDefinitions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a</AdditionalDependencies>
+      <OutputFile>$(OutDir)/CustomDeci3.self.ppu.elf</OutputFile>
+      <GccOutputFormat>ELFFile</GccOutputFormat>
+    </Link>
+    <PostBuildEvent>
+      <Message>Fake Signing ELF "$(TargetDir)$(TargetName).self"</Message>
+      <Command>$(SCE_PS3_ROOT)\host-win32\bin\make_fself "$(TargetPath)" "$(TargetDir)$(TargetName).self"
+copy /v /y "$(TargetDir)$(TargetName).self" "$(SolutionDir)CustomDeci3"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;NDEBUG;__GCC__</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a</AdditionalDependencies>
+      <OutputFile>$(OutDir)/CustomDeci3.self.ppu.elf</OutputFile>
+      <GccOutputFormat>ELFFile</GccOutputFormat>
+    </Link>
+    <PostBuildEvent>
+      <Message>Fake Signing ELF "$(TargetDir)$(TargetName).self"</Message>
+      <Command>$(SCE_PS3_ROOT)\host-win32\bin\make_fself "$(TargetPath)" "$(TargetDir)$(TargetName).self"
+copy /v /y "$(TargetDir)$(TargetName).self" "$(SolutionDir)CustomDeci3"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='SNC Debug|PS3'">
+    <ClCompile>
+      <AdditionalOptions>-Xaltivec %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SN_PS3_PATH)\ppu\include;$(SN_PS3_PATH)\common\include\sn;$(SN_PS3_PATH)\common\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;_DEBUG;__SNC__</PreprocessorDefinitions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizationLevel>Level0</OptimizationLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a</AdditionalDependencies>
+      <OutputFile>$(OutDir)/CustomDeci3.self.ppu.self</OutputFile>
+      <OutputFormat>FSELFFile</OutputFormat>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /v /y "$(TargetDir)$(TargetName).self" "$(SolutionDir)CustomDeci3"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='SNC Release|PS3'">
+    <ClCompile>
+      <AdditionalOptions>-Xaltivec %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SN_PS3_PATH)\ppu\include;$(SN_PS3_PATH)\common\include\sn;$(SN_PS3_PATH)\common\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;NDEBUG;__SNC__</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a</AdditionalDependencies>
+      <OutputFile>$(OutDir)/CustomDeci3.self.ppu.self</OutputFile>
+      <OutputFormat>FSELFFile</OutputFormat>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /v /y "$(TargetDir)$(TargetName).self" "$(SolutionDir)CustomDeci3"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CustomDeci3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets">
+  </Import>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

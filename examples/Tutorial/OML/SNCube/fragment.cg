@@ -1,0 +1,16 @@
+struct Input
+{
+	float2 tex0 : TEXCOORD0;
+};
+
+struct Output
+{
+	float4 colour : COLOR;
+};
+
+Output main(Input input, uniform sampler2D texture)
+{
+	Output output;
+	output.colour = tex2D(texture, input.tex0);
+	return output;
+}

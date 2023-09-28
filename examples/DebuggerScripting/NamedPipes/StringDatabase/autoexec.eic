@@ -1,0 +1,93 @@
+//****************************************************************************
+//
+// Copyright SN Systems Ltd 2011
+//
+// Description: This autoexec.eic is an example of a startup script using named pipes.
+// This script connects to a named pipe created by a server application, 
+// registers a callback, StringHandler, for 'StringID' types and then passes
+// string requests on the named pipe, outputting the reply string
+// These custom string callbacks are available when hovering over a StringID type
+// or when selecting the 'Database' display type on a watch/locals or autos view
+// context menu for a StringID type.
+//
+//****************************************************************************
+
+#define BUFFER_SIZE 256
+#define TIME_OUT 2000
+
+void* hPipe;
+
+void StringHandler( sn_uint32 uProcess, sn_uint32 uThread0, sn_uint32 uThread1, char *pVar, char *pOutput, sn_uint32 uSize)
+{
+
+	sn_dword dwBytesWritten, dwBytesRead, dwError;
+	sn_val ValRes;
+	char pInBuffer[BUFFER_SIZE];
+	char responseBuffer[BUFFER_SIZE];
+	sn_uint64 u64ThreadID;
+	sn_int32 len;
+	u64ThreadID.word[0] = uThread0;
+	u64ThreadID.word[1] = uThread1;
+
+	if (SN_FAILED(PS3EvaluateExpression( uProcess, u64ThreadID, &ValRes, pVar )))
+	{
+		strncpy(pOutput, "Error Evaluating Expression", uSize);
+		return;
+	}
+	
+	// Pass this value to the named pipe
+	
+	len = sprintf(pInBuffer, "%d", ValRes.val.i32);
+	pInBuffer[len] = '\0';
+	if (SN_FAILED(ScriptWriteFile(hPipe, pInBuffer, strlen(pInBuffer) + 1 , &dwBytesWritten, &dwError)))
+	{
+		sprintf(pOutput, "Error: %d", dwError);
+		printf("Error: %s", GetLastErrorString());
+		return;
+	}
+	
+	//Wait for response
+	
+	while (1) 
+	{ 
+		if (!SN_FAILED(ScriptReadFile(hPipe, responseBuffer, BUFFER_SIZE, &dwBytesRead, &dwError)))
+			break;
+	}
+
+	uSize = (uSize > BUFFER_SIZE) ? BUFFER_SIZE : uSize;
+	memcpy(pOutput, responseBuffer, uSize);
+
+	return;
+}
+
+int StartServerAndPipe(void)
+{
+	char pszPipeName[] = "\\\\.\\pipe\\MyNamedPipe";
+	sn_dword dwError;
+	hPipe = NULL;
+	printf("Close any open Named Pipes\n");
+	ScriptCloseAllOpenNamedPipes();
+	
+	while (1) 
+	{ 
+		if (!SN_FAILED(ScriptCreateFile( pszPipeName, GENERIC_READ | GENERIC_WRITE, OPEN_EXISTING, &hPipe, &dwError)))
+			break;
+			
+		printf("\nError: %s", GetLastErrorString());
+	} 
+
+	return 1;
+}
+
+
+int main(int argc_, char** argv_)
+{
+	
+	sn_uint32 uID;
+	StartServerAndPipe();
+	
+	printf("\nInit suceeeded. Register type display handler");
+	
+	RegisterTypeDisplayHandler("StringID:[Database]StringHandler");
+	return 0;
+}

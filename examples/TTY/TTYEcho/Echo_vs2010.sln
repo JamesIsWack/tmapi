@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Echo", "TTYEcho.vcxproj", "{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|PS3 = Debug|PS3
+		Release|PS3 = Release|PS3
+		SNC Debug|PS3 = SNC Debug|PS3
+		SNC Release|PS3 = SNC Release|PS3
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}.Debug|PS3.ActiveCfg = Debug|PS3
+		{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}.Debug|PS3.Build.0 = Debug|PS3
+		{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}.Release|PS3.ActiveCfg = Release|PS3
+		{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}.Release|PS3.Build.0 = Release|PS3
+		{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}.SNC Debug|PS3.ActiveCfg = SNC Debug|PS3
+		{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}.SNC Debug|PS3.Build.0 = SNC Debug|PS3
+		{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}.SNC Release|PS3.ActiveCfg = SNC Release|PS3
+		{CAB19C98-3FA6-4729-808F-99B6E3B5D98D}.SNC Release|PS3.Build.0 = SNC Release|PS3
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
